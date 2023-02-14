@@ -1,77 +1,40 @@
-:root {
-    --primary-color: #330A1D;
-    --white-smoke-color: whitesmoke;
-    --gap: 3rem;
+.intro-content {
+    position: relative;
+    top: -8rem;
+    display: grid;
+    /* um fragmento pra cada lado*/
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center ;
+    gap: var(--gap);
+    height: 100vh;
 }
 
-* {
-    margin: 0;
-    padding: 0;
+.intro-text-content,
+.intro-img {
+    /* dentro de uma coluna da grid, estamos fazendo um flex */
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
 }
 
-html {
-    font-size: 62.5%;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 2rem;
-    color: var(--primary-color);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
-}
-
-h1 {
-    font-size: 6rem;
+.intro-text-content h2 {
+    font-size: 8rem;
+    margin-bottom: 5rem;
+    margin-right: 10rem;
     text-transform: uppercase;
+    line-height: 1.2;
 }
 
-h2 {
-    font-size: 5.5rem;
+.intro-img img {
+    max-width: 100%;
+    height: auto;
 }
 
-h3 {
-    font-size: 5rem;
+.top3-content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    height: 100vh;
+    max-width: 64rem;
+    text-align: center;
 }
-
-h4 {
-    font-size: 4.5rem;
-}
-
-h5 {
-    font-size: 4rem;
-}
-
-h6 {
-    font-size: 3.5rem;
-}
-
-.main-bg {
-    background-image: url('../img/main-bg.svg');
-    background-size: cover;
-    background-position: center center;
-    /* estamos separando essa classe, pois poderemos
-    declará-la em qualquer outra classe lá no html */
-    color: var(--white-smoke-color);
-}
-
-.white-bg {
-    background: var(--white-smoke-color);
-}
-
-.main-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--gap);
-}
-
-.section {
-    min-height: 100vh;
-}
-
-
-
-
-

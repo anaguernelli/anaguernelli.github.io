@@ -1,0 +1,67 @@
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    /* z-index vai impedir q outros objs passem por cima */
+    z-index: 1;
+    border-bottom: 0.1rem solid var(--light-gray-color);
+}
+
+.menu-content {
+    /* separando a logo da ul */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.menu h1 {
+    font-size: 2.3rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.menu h1 a {
+    /* no h1 o color não faz efeito pois temos o link, portanto
+    devemos definir separadamente as classes e botar como abaixo, herdando a cor de h1 */
+    color: inherit;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.menu ul li a {
+    /* queremos mudar a partir dos links, ao invés de ajustar o li. por padrão, ele é display inline*/
+    display: block;
+    /* quando utilizamos height, exemplo, com display block,
+    será empurrado o menu para baixo */
+    padding: 2rem;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    /* vai estar logo abaixo do nosso menu */
+    position: relative;
+}
+
+.menu ul li a::after {
+    /* caso fosse colocar borda, sem o pseudo elemento after
+    border-bottom: 0.2rem solid; */
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    width: 0;
+    height: 0.2rem;
+    background: var(--secondary-color);
+    transition: all 300ms ease-in-out;
+}
+
+/* estamos gerando uma transição pro menu */
+.menu ul li a:hover::after {
+    width: 50%;
+    left: 25%;
+}
