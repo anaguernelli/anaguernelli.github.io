@@ -6,7 +6,7 @@
     grid-template-columns: 1fr 1.5fr;
     align-items: center ;
     gap: var(--gap);
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .intro-text-content,
@@ -32,9 +32,76 @@
 
 .top3-content {
     display: flex;
-    flex-flow: column wrap;
+    /* flex-flow: column wrap;
+    é a mesma coisa q acima, porem não vamos permitir
+    que a coluna se quebre */
+    flex-flow: column;
+    flex-wrap: nowrap;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     max-width: 64rem;
     text-align: center;
+}
+
+.grid-one-content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.grid-main-heading {
+    margin-bottom: 1rem;
+}
+
+.grid-description {
+    padding-bottom: 5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    counter-reset: grid-counter; 
+}
+
+/* antes do meu título */
+.grid h3 {
+    font-size: 3rem;
+    /* relative para q o counter fique limitado no h3*/
+    position: relative;
+    padding-left: 5rem;
+    padding-bottom: 2rem;
+}
+
+/* before pq tá nates do meu título,
+fosse after, iria ficar depois do meu título */
+.grid h3::before {
+    /* vai implementar um contador em cada tabela,
+    usando counter-resete na grid */
+    counter-increment: grid-counter;
+    content: counter(grid-counter);
+    position: absolute;
+    font-size: 8rem;
+    font-style: italic;
+    top: -4.3rem;
+    left: -2rem;
+    transform: rotate(5deg);
+}
+
+.gallery-img {
+    width: 100%;
+    max-width: 36rem;
+    max-height: 36rem;
+    /*specifies what happens if content overflows an element's box. in this case, will hidden */
+    overflow: hidden;
+}
+
+.gallery-img img {
+    transition: all 300ms ease-in-out;
+}
+
+.gallery-img img:hover {
+    /* vai para a esquerda e desce*/
+    transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
 }

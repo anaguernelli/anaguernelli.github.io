@@ -1,9 +1,10 @@
 .main-bg {
+    /* we're separating this class, because we can state 
+    in any another classes in html */
     background-image: url('../img/main-bg.svg');
     background-size: cover;
     background-position: center center;
-    /* estamos separando essa classe, pois poderemos
-    declará-la em qualquer outra classe lá no html */
+    
     color: var(--white-color);
 }
 
@@ -15,7 +16,8 @@
 .main-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: var(--gap);
+    /* 8rem está definindo o passing no top */
+    padding: 10rem var(--gap);
 }
 
 .section {
