@@ -14,20 +14,27 @@
     <link rel="stylesheet" href="assets/css/menu.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="main-bg">
+<body>
+    <!-- acessibility -->
+    <input id="close-menu" class="close-menu" type="checkbox"  aria-label="Close menu" role="button">
+    <label class="close-menu-label" for="close-menu" title="close menu"></label>
     <aside class="menu white-bg">
         <div class="main-content menu-content">
-            <h1>
+            <h1 onclick="getElementById('close-menu').checked = false;">
                 <a href="#home">LOGO</a>
             </h1>
 
             <nav>
-                <ul>
+                <!-- JavaScript 
+                quando selecionar algum link, o menu fechará e user será
+                direcionado direto para a seção desejada -->
+                <ul onclick="getElementById('close-menu').checked = false;">
                     <li><a href="#intro">Intro</a></li>
                     <li><a href="#grid-one">Grid-one</a></li>
                     <li><a href="#gallery">gallery</a></li>
                     <li><a href="#grid-two">Grid-two</a></li>
                     <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -42,7 +49,7 @@
                 <p>New to Django? Or to web development in general? Well, you came to the right place: read this material to quickly get up and running. Django has a lot of documentation. A high-level overview of how it's organized will help you know where to look for certain things.</p>
             </div>
             <div class="intro-img">
-                <img src="assets/img/drawn-html-css.svg" alt="">
+                <img src="assets/img/html-css.svg" alt="">
             </div>
         </div>
     </section>
@@ -187,5 +194,52 @@
             </div>
         </div>
     </section>
+
+    <section id="contact" class="main-bg section">
+        <div class="main-content intro-content">
+            <div class="intro-text-content">
+                <h2>Contact us</h2>
+                <p>The makemigrations command looks at all your available models and creates migrations for whichever tables don't already exist. migrate runs the migrations and creates tables in your database, as well as optionally providing much richer schema control.</p>
+            </div>
+
+            <div class="intro-img">
+                <img src="assets/img/contact-us.svg" alt="contact us">
+            </div>
+
+            <div class="contact-form">
+                <fieldset class="form-grid">
+                    <legend>Contact me</legend>
+
+                    <div class="form-group">
+                        <label for="first-name">First name</label>
+                        <input type="text" name="first-name" id="first-name" placeholder="Your first name">
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last name</label>
+                        <input type="text" name="last-name" id="last-name" placeholder="Your last name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" placeholder="Your e-mail">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message">Message me</label>
+                        <textarea name="message" id="message" cols="30" rows="10" placeholder="Write a message"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Send message</button>
+                    </div>
+
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer white-bg">
+        <p><a rel="nofollow" href="https://github.com/anaguernelli" target="_blank">Github <span class="heart">❤</span> Ana Guernelli</a></p>
+        <p><a rel="nofollow" href="https://github.com/anaguernelli/anaguernelli.github.io" target="_blank">Verifique o repositório desta landing page</a></p>
+    </footer>
+
+    <a class="back-to-top" href="#">⇧</a>
 </body>
 </html>
