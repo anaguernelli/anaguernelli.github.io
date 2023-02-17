@@ -308,6 +308,20 @@ fosse after, iria ficar depois do meu título */
 }
 
 @media (max-width: 653px) {
+    .intro-text-content p {
+        text-align: center;
+    }
+    .contact-form, .form-grid {
+        border: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        width: 100%;
+    }
+}
+
+/* @media (max-width: 653px) {
     .main-content p {
         font-size: 1.7rem;
         align-items: center;
@@ -345,4 +359,4 @@ fosse after, iria ficar depois do meu título */
         flex-flow: column wrap;
 
     }
-}
+} */
