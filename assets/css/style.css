@@ -216,6 +216,18 @@ fosse after, iria ficar depois do meu título */
 
 /* media query */
 @media (max-width: 800px) {
+    .main-content h2 {
+        font-size: 4rem;
+    }
+
+    .main-content p {
+        font-size: 1.7rem;
+    }
+
+    .main-content {
+        overflow: hidden;
+    }
+
     .intro-content, .grid {
         grid-template-columns: 1fr;
     }
@@ -282,5 +294,15 @@ fosse after, iria ficar depois do meu título */
     
     .menu-spacing {
         display: none;
+    }
+
+    .intro-img img {
+        display: none;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 1rem 1rem;
+        font-size: 1.8rem;
     }
 }
